@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bkt2rqwas845n"]
 
+[ext_resource type="Script" uid="uid://c7nsxruku3bwm" path="res://Scripts/sticky_note.gd" id="1_ipb85"]
 [ext_resource type="Script" uid="uid://b7o2ctipr5r3g" path="res://Scripts/button.gd" id="2_ipb85"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_aqvmi"]
@@ -8,12 +9,18 @@ font_color = Color(0, 0, 0, 1)
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_4xfmv"]
 
 [node name="Sticky Note" type="Node2D" unique_id=453645916]
+script = ExtResource("1_ipb85")
 
 [node name="Note" type="ColorRect" parent="." unique_id=954844998]
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(3.4339359, 4.081621)
 color = Color(1, 1, 0.49411765, 1)
+
+[node name="Drag" type="Button" parent="." unique_id=1838404060]
+offset_right = 138.0
+offset_bottom = 163.0
+action_mode = 0
 
 [node name="From" type="Label" parent="." unique_id=1223928041]
 offset_left = 9.0
@@ -49,4 +56,6 @@ bus = &"Record"
 
 [node name="Audio Player" type="AudioStreamPlayer2D" parent="." unique_id=25824583]
 
+[connection signal="button_down" from="Drag" to="." method="_on_drag_button_down"]
+[connection signal="button_up" from="Drag" to="." method="_on_drag_button_up"]
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cw7gtgp5fmp6b"]
 
 [ext_resource type="PackedScene" uid="uid://bkt2rqwas845n" path="res://Scenes/sticky_note.tscn" id="1_5dx45"]
+[ext_resource type="Script" uid="uid://bwx5dx7doafd" path="res://Scripts/new_note.gd" id="2_ysn5d"]
 
 [node name="Message Board" type="Node2D" unique_id=145409606]
 
@@ -16,4 +17,15 @@ color = Color(0.4390491, 0.43904912, 0.43904912, 1)
 position = Vector2(578, 325)
 
 [node name="Sticky Note" parent="." unique_id=453645916 instance=ExtResource("1_5dx45")]
-position = Vector2(385, 170)
+position = Vector2(233, 110)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2096505874]
+position = Vector2(580, 325)
+
+[node name="Button" type="Button" parent="." unique_id=1732309090]
+offset_left = 39.0
+offset_top = 552.0
+offset_right = 171.0
+offset_bottom = 626.0
+text = "New Note"
+script = ExtResource("2_ysn5d")
