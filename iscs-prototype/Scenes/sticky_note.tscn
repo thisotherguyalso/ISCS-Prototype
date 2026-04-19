@@ -2,35 +2,12 @@
 
 [ext_resource type="Script" uid="uid://b7o2ctipr5r3g" path="res://Scripts/button.gd" id="2_ipb85"]
 
-[sub_resource type="GDScript" id="GDScript_4xfmv"]
-script/source = "extends Node2D
-
-var effect
-var recording
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	var index = AudioServer.get_bus_index(\"Record\")
-	effect = AudioServer.get_bus_effect(index, 0)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-func _on_play_button_pressed() -> void:
-	$\"Audio Player\".stream = recording
-	$\"Audio Player\".play()
-"
-
 [sub_resource type="LabelSettings" id="LabelSettings_aqvmi"]
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_4xfmv"]
 
 [node name="Sticky Note" type="Node2D" unique_id=453645916]
-script = SubResource("GDScript_4xfmv")
 
 [node name="Note" type="ColorRect" parent="." unique_id=954844998]
 offset_right = 40.0

@@ -2,7 +2,7 @@ extends Button
 
 var effect
 var recording
-var is_Play
+var is_Play = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,12 +15,13 @@ func _on_pressed() -> void:
 		effect.set_recording_active(false)
 		$".".text = "Play"
 		is_Play = true
-	elif is_Play:
+	elif is_Play == true:
 		$"../Audio Player".stop()
 		$"../Audio Player".stream = recording
 		$"../Audio Player".play()
 	else:
-		effect.set_recording_active(true)
-		$".".text = "Stop"
+		if is_Play == false:
+			effect.set_recording_active(true)
+			$".".text = "Stop"
 	
 	
