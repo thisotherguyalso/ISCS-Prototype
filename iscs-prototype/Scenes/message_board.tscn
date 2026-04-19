@@ -1,3 +1,19 @@
 [gd_scene format=3 uid="uid://cw7gtgp5fmp6b"]
 
-[node name="Message Board" type="Node2D" unique_id=1024612284]
+[ext_resource type="PackedScene" uid="uid://bkt2rqwas845n" path="res://Scenes/sticky_note.tscn" id="1_5dx45"]
+
+[node name="Message Board" type="Node2D" unique_id=145409606]
+
+[node name="Board" type="ColorRect" parent="." unique_id=1346724500]
+offset_left = -169.0
+offset_top = 770.0
+offset_right = -168.0
+offset_bottom = 771.0
+scale = Vector2(1552.1768, -871.9644)
+color = Color(0.4390491, 0.43904912, 0.43904912, 1)
+
+[node name="View" type="Camera2D" parent="." unique_id=1413086652]
+position = Vector2(578, 325)
+
+[node name="Sticky Note" parent="." unique_id=453645916 instance=ExtResource("1_5dx45")]
+position = Vector2(385, 170)
