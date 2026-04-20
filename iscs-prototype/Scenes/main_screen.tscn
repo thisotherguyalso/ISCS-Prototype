@@ -32,6 +32,7 @@ message_board = NodePath("../MessageBoard")
 message_archive = NodePath("../MessageArchive")
 
 [node name="MessageArchive" parent="." unique_id=495464861 instance=ExtResource("3_y1wm0")]
+visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=562020871]
 
