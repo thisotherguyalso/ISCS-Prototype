@@ -1,48 +1,39 @@
 [gd_scene format=3 uid="uid://bkt2rqwas845n"]
 
 [ext_resource type="Script" uid="uid://c7nsxruku3bwm" path="res://Scripts/sticky_note.gd" id="1_ipb85"]
-[ext_resource type="Script" uid="uid://b7o2ctipr5r3g" path="res://Scripts/button.gd" id="2_ipb85"]
-
-[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_4xfmv"]
 
 [node name="Sticky Note" type="Node2D" unique_id=453645916]
 script = ExtResource("1_ipb85")
 
-[node name="Note" type="ColorRect" parent="." unique_id=954844998]
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(3.4339359, 4.081621)
-color = Color(1, 1, 0.49411765, 1)
+[node name="Play" type="Button" parent="." unique_id=1928382888]
+offset_top = 57.0
+offset_right = 200.0
+offset_bottom = 197.0
+
+[node name="BottomColor" type="ColorRect" parent="." unique_id=954844998]
+offset_right = 200.0
+offset_bottom = 200.0
+mouse_filter = 2
+color = Color(0.9785908, 0.99563855, 0.6723213, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Drag" type="Button" parent="." unique_id=1838404060]
-offset_right = 138.0
-offset_bottom = 163.0
+offset_right = 200.0
+offset_bottom = 58.0
 action_mode = 0
 
-[node name="Button" type="Button" parent="." unique_id=1073739396]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 41.0
-offset_top = 86.0
-offset_right = 104.0
-offset_bottom = 117.0
+[node name="TopColor" type="ColorRect" parent="Drag" unique_id=1783638739]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "Record"
-script = ExtResource("2_ipb85")
+mouse_filter = 2
+color = Color(0.8531895, 0.8456747, 0.5871855, 1)
 
-[node name="Audio Recorder" type="AudioStreamPlayer2D" parent="." unique_id=334426876]
-stream = SubResource("AudioStreamMicrophone_4xfmv")
-autoplay = true
-bus = &"Record"
+[node name="Audio Player" type="AudioStreamPlayer" parent="." unique_id=989891215]
 
-[node name="Audio Player" type="AudioStreamPlayer2D" parent="." unique_id=25824583]
-
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="button_down" from="Drag" to="." method="_on_drag_button_down"]
 [connection signal="button_up" from="Drag" to="." method="_on_drag_button_up"]
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

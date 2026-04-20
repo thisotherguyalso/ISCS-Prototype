@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://i4aokkeplm0v"]
+
+[ext_resource type="Script" uid="uid://cabantwriq5kr" path="res://Scenes/messenger_screen.gd" id="1_hbvun"]
+[ext_resource type="Script" uid="uid://c385qib3gyqsm" path="res://Scripts/record_button.gd" id="1_lrsgu"]
+[ext_resource type="PackedScene" uid="uid://bkt2rqwas845n" path="res://Scenes/sticky_note.tscn" id="2_p06je"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yin4x"]
+font_color = Color(0.23508433, 0.23414439, 0.17519832, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yin4x"]
+bg_color = Color(0.4840387, 0.6062165, 0.48328233, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_lrsgu"]
+
+[node name="MessengerScreen" type="Node2D" unique_id=1631961987]
+script = ExtResource("1_hbvun")
+
+[node name="Control" type="Control" parent="." unique_id=1927939214]
+custom_minimum_size = Vector2(360, 640)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 360.0
+offset_bottom = 640.0
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1385130959]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9150463, 0.8753721, 0.78178424, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1304951251]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SendLabel" type="Label" parent="Control/VBoxContainer" unique_id=601158530]
+layout_mode = 2
+text = "Send a message to your loved one!"
+label_settings = SubResource("LabelSettings_yin4x")
+
+[node name="Space" type="Label" parent="Control/VBoxContainer" unique_id=1023746769]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="RecordButton" type="Button" parent="Control/VBoxContainer" unique_id=206393254]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8193629, 0.81261086, 0.82829, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_yin4x")
+text = "RECORD"
+script = ExtResource("1_lrsgu")
+sticky_note_scene = ExtResource("2_p06je")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=628847250]
+stream = SubResource("AudioStreamMicrophone_lrsgu")
+autoplay = true
+bus = &"Record"

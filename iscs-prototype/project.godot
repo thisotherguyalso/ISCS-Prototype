@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ISCS Prototype"
-run/main_scene="uid://cw7gtgp5fmp6b"
+run/main_scene="uid://d3w1hmwm1gjqk"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,17 @@ config/icon="res://icon.svg"
 
 buses/default_bus_layout="uid://bjhi2x1t1wdo1"
 driver/enable_input=true
+
+[autoload]
+
+DragState="*uid://bjxvdjka0kkic"
+
+[display]
+
+window/size/viewport_width=360
+window/size/viewport_height=640
+window/size/resizable=false
+window/stretch/mode="viewport"
 
 [physics]
 
