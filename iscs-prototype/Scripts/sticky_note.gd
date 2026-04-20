@@ -16,8 +16,9 @@ func _process(delta: float) -> void:
 	if active:
 		$".".global_position = mouse_position + dif
 
-func set_audio(stream: AudioStreamWAV) -> void:
+func set_audio(stream: AudioStreamWAV, sender: String) -> void:
 	audio_player.stream = stream
+	$SenderLabel.text = sender  # add a Label node named SenderLabel to your sticky_note scene
 
 func _on_drag_button_down() -> void:
 	dif = $".".get_global_position() - get_viewport().get_mouse_position()

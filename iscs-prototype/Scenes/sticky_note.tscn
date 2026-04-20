@@ -34,6 +34,22 @@ color = Color(0.8531895, 0.8456747, 0.5871855, 1)
 
 [node name="Audio Player" type="AudioStreamPlayer" parent="." unique_id=989891215]
 
+[node name="SenderLabel" type="Label" parent="." unique_id=1515517352]
+offset_left = 24.0
+offset_top = 73.0
+offset_right = 158.0
+offset_bottom = 138.0
+theme_override_colors/font_color = Color(0.16350216, 0.16350219, 0.16350216, 1)
+text = "From:
+     Son"
+
+[node name="Date" type="Label" parent="." unique_id=433411429]
+offset_left = 13.0
+offset_top = 160.0
+offset_right = 53.0
+offset_bottom = 183.0
+theme_override_colors/font_color = Color(0.083911665, 0.083911665, 0.083911665, 1)
+
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="button_down" from="Drag" to="." method="_on_drag_button_down"]
 [connection signal="button_up" from="Drag" to="." method="_on_drag_button_up"]

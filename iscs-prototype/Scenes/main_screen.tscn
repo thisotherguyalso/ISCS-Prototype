@@ -2,7 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://cw7gtgp5fmp6b" path="res://Scenes/message_board.tscn" id="1_b1vw1"]
 [ext_resource type="PackedScene" uid="uid://i4aokkeplm0v" path="res://Scenes/messenger_screen.tscn" id="2_wi85j"]
-[ext_resource type="Script" uid="uid://dvrnyh1raksll" path="res://Scenes/switcher.gd" id="3_wi85j"]
+[ext_resource type="Script" uid="uid://dvrnyh1raksll" path="res://Scripts/switcher.gd" id="3_wi85j"]
+[ext_resource type="PackedScene" uid="uid://crg6h3vqmhwk7" path="res://Scenes/message_archive.tscn" id="3_y1wm0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b1vw1"]
 bg_color = Color(0.8505703, 0.94007844, 0.9845299, 1)
@@ -22,12 +23,12 @@ corner_radius_bottom_right = 20
 
 [node name="MessageBoard" parent="." unique_id=145409606 instance=ExtResource("1_b1vw1")]
 
-[node name="MessengerScreen" parent="." unique_id=1631961987 node_paths=PackedStringArray("message_board") instance=ExtResource("2_wi85j")]
+[node name="MessengerScreen" parent="." unique_id=1631961987 node_paths=PackedStringArray("message_board", "message_archive") instance=ExtResource("2_wi85j")]
 visible = false
 message_board = NodePath("../MessageBoard")
+message_archive = NodePath("../MessageArchive")
 
-[node name="MessageArchive" type="Node2D" parent="." unique_id=131627126]
-visible = false
+[node name="MessageArchive" parent="." unique_id=495464861 instance=ExtResource("3_y1wm0")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=562020871]
 
