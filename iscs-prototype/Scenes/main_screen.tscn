@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://i4aokkeplm0v" path="res://Scenes/messenger_screen.tscn" id="2_wi85j"]
 [ext_resource type="Script" uid="uid://dvrnyh1raksll" path="res://Scripts/switcher.gd" id="3_wi85j"]
 [ext_resource type="PackedScene" uid="uid://crg6h3vqmhwk7" path="res://Scenes/message_archive.tscn" id="3_y1wm0"]
+[ext_resource type="Texture2D" uid="uid://b6uur3mtbm75i" path="res://Assets/inbox.png" id="5_qm5cq"]
+[ext_resource type="Texture2D" uid="uid://cvp5uyi0lth30" path="res://Assets/sticky-note.png" id="6_heolw"]
+[ext_resource type="Texture2D" uid="uid://can718j2sgtsj" path="res://Assets/microphone.png" id="7_057lb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b1vw1"]
 bg_color = Color(0.8505703, 0.94007844, 0.9845299, 1)
@@ -45,15 +48,30 @@ custom_minimum_size = Vector2(120, 40)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_b1vw1")
 
+[node name="Icon" type="Sprite2D" parent="CanvasLayer/Switcher/Switch_MA" unique_id=780935359]
+position = Vector2(61.999996, 30.999998)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("5_qm5cq")
+
 [node name="Switch_MB" type="Button" parent="CanvasLayer/Switcher" unique_id=586605593]
 custom_minimum_size = Vector2(120, 40)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_wi85j")
 
+[node name="Icon" type="Sprite2D" parent="CanvasLayer/Switcher/Switch_MB" unique_id=457968297]
+position = Vector2(61.999996, 30.999998)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("6_heolw")
+
 [node name="Switch_MS" type="Button" parent="CanvasLayer/Switcher" unique_id=146413774]
 custom_minimum_size = Vector2(120, 40)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_y1wm0")
+
+[node name="Icon" type="Sprite2D" parent="CanvasLayer/Switcher/Switch_MS" unique_id=980874085]
+position = Vector2(61.999996, 30.999998)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("7_057lb")
 
 [connection signal="pressed" from="CanvasLayer/Switcher/Switch_MA" to="CanvasLayer/Switcher" method="_on_switch_ma_pressed"]
 [connection signal="pressed" from="CanvasLayer/Switcher/Switch_MB" to="CanvasLayer/Switcher" method="_on_switch_mb_pressed"]
