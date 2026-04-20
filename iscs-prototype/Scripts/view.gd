@@ -7,6 +7,11 @@ var velocity := Vector2.ZERO
 var last_mouse_pos := Vector2.ZERO
 
 const FRICTION := 0.92
+const ZOOM_MIN := Vector2(0.5, 0.5)
+const ZOOM_MAX := Vector2(2.0, 2.0)
+const ZOOM_STEP := 0.1
+
+var pinch_distance := 0.0
 
 func _input(event: InputEvent) -> void:
 	if DragState.note_active:
@@ -43,6 +48,20 @@ func _input(event: InputEvent) -> void:
 		velocity = cam_start - (event.position - drag_start) - position
 		position = cam_start - (event.position - drag_start)
 		last_mouse_pos = event.position
+	
+	# Scroll to zoom
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+			_apply_zoom(ZOOM_STEP)
+		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+			_apply_zoom(-ZOOM_STEP)
+	
+	# Pinch to zoom
+	if event is InputEventMagnifyGesture:
+		_apply_zoom((event.factor - 1.0) * 0.5)
+
+func _apply_zoom(delta: float) -> void:
+	zoom = clamp(zoom + Vector2(delta, delta), ZOOM_MIN, ZOOM_MAX)
 
 func reset() -> void:
 	dragging = false

@@ -14,18 +14,18 @@ offset_bottom = 640.0
 color = Color(0.9150463, 0.8753721, 0.78178424, 1)
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=24204002]
-custom_minimum_size = Vector2(340, 620)
+custom_minimum_size = Vector2(340, 450)
 offset_left = 10.0
-offset_top = 10.0
+offset_top = 50.0
 offset_right = 350.0
-offset_bottom = 630.0
+offset_bottom = 500.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=2134691473]
 custom_minimum_size = Vector2(340, 0)
 layout_mode = 2
+alignment = 1
 
 [node name="ArchiveEntry" parent="ScrollContainer/VBoxContainer" unique_id=1104252773 instance=ExtResource("1_ol46s")]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-size_flags_horizontal = 8
-alignment = 2
+alignment = 1

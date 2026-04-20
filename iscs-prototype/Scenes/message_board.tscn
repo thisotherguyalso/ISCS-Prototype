@@ -7,7 +7,18 @@
 [node name="Message Board" type="Node2D" unique_id=145409606]
 
 [node name="Board" type="ColorRect" parent="." unique_id=1346724500]
-custom_minimum_size = Vector2(1000, 1000)
+custom_minimum_size = Vector2(4000, 4000)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1742.0
+offset_top = -1599.0
+offset_right = 2258.0
+offset_bottom = 2401.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.85551214, 0.77046555, 0.6747944, 1)
 
 [node name="View" type="Camera2D" parent="." unique_id=1413086652]
@@ -20,11 +31,11 @@ script = ExtResource("1_ysn5d")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=217153713]
 repeat_size = Vector2(195, 195)
-repeat_times = 5
+repeat_times = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1376566963]
 modulate = Color(1, 1, 1, 0.06666667)
-position = Vector2(100, 100)
+position = Vector2(193, 330)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_nyybj")
 region_rect = Rect2(0, 0, 1000, 1000)

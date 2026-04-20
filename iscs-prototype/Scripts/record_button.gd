@@ -28,7 +28,7 @@ func _start_recording() -> void:
 func _stop_recording() -> void:
 	recording = false
 	audio_effect.set_recording_active(false)
-	var stream: AudioStreamWAV = audio_effect.get_recording()
+	var stream: AudioStreamWAV = audio_effect.get_recording().duplicate()
 	var sender := name_input.text.strip_edges()
 	if sender == "":
 		sender = "Unknown"

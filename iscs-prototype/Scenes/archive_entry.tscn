@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://di8qs2xb6recx" path="res://Scenes/archive_entry.gd" id="1_7vcig"]
 
 [node name="ArchiveEntry" type="HBoxContainer" unique_id=1104252773]
-custom_minimum_size = Vector2(360, 0)
-offset_right = 360.0
+custom_minimum_size = Vector2(250, 0)
+offset_right = 270.0
 offset_bottom = 50.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -12,7 +12,7 @@ theme_override_constants/separation = 20
 script = ExtResource("1_7vcig")
 
 [node name="Label" type="Label" parent="." unique_id=540726950]
-custom_minimum_size = Vector2(220, 0)
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_colors/font_color = Color(0.06798274, 0.06798274, 0.06798273, 1)
@@ -24,3 +24,5 @@ custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_horizontal = 8
 text = "PLAY"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
